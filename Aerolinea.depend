@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1685312708 source:c:\users\administrador\desktop\unvime\programación\c\aprendiendo\aprendiendoc\aerolinea\main.c
+	<stdio.h>
+	<stdlib.h>
+	<wchar.h>
+	<locale.h>
+	<time.h>
+
