@@ -53,13 +53,14 @@ int main()
     while (op<1 || op>6){
         puts("-----------------------------------");
         printf("Opción invalida, intente de nuevo...\n");
+        puts("-----------------------------------");
         printf("Opción: ");
         scanf("%d",&op);
+
     }
         switch(op){
             case 1:
                 system("cls");
-                printf("En proceso...\n");
                 puts("-----------------------------------");
                 puts("***************COMPRAR PASAJE***************");
                 puts("-----------------------------------");
@@ -67,12 +68,14 @@ int main()
                 printf("Valor: $10.000\n");
                 printf("1. SI\n");
                 printf("2. NO\n");
+                puts("-----------------------------------");
                 printf("Opción: ");
                 scanf("%d",&op);
 
                 while (op!=1 && op!=2){
                     puts("-----------------------------------");
                     printf("Opción invalida, intente de nuevo...\n");
+                    puts("-----------------------------------");
                     printf("Opción: ");
                     scanf("%d",&op);
                 }
@@ -86,18 +89,64 @@ int main()
                                 recaudacion = (recaudacion + 10000);
 
                                 puts("-----------------------------------");
-                                printf("¡Pasaje comprado con éxito!\n");
+                                printf("¡Pasaje reservado con éxito!\n");
                                 printf("Su asiento es el N°%d\n",i+1);
                                 puts("-----------------------------------");
 
                                 i = 11; /*Detiene el bucle cuando encuentra un asiento*/
                             }else if(asientos[4]==1){
-                                puts("-----------------------------------");
+                                system("cls");
                                 printf("No hay más asientos en primera clase...\n");
-                                printf("¡Intente con uno de clase turista!\n");
-                                printf("De lo contrario, el vuelo n°%d",aleatorio+1);
-                                printf(" sale dentro de tres horas...\n");
+                                printf("¿Desea reservar uno de clase turista?\n");
+                                printf("**El precio de la clase turista es de $5.000**\n");
+                                printf("1. Si\n");
+                                printf("2. No\n");
                                 puts("-----------------------------------");
+                                printf("Opción: ");
+                                scanf("%d",&op);
+
+                                while(op!=1 && op!=2){
+                                    puts("-----------------------------------");
+                                    printf("Opción invalida, intente de nuevo...\n");
+                                    puts("-----------------------------------");
+                                    printf("Opción: ");
+                                    scanf("%d",&op);
+                                }
+
+                                switch(op){
+                                    case 1:
+                                        //////////////////////////////////////////////////////////////////
+                                        for(i=5;i<10;i++){
+                                            if (asientos[i]==0){
+                                                asientos[i]=1;
+
+                                                recaudacion = (recaudacion + 5000);
+
+                                                puts("-----------------------------------");
+                                                printf("¡Pasaje reservado con éxito!\n");
+                                                printf("Su asiento es el N°%d\n",i+1);
+                                                puts("-----------------------------------");
+
+                                                i = 11;
+                                            }else if(asientos[9]==1){
+                                                puts("-----------------------------------");
+                                                printf("No hay más asientos en la clase turista...\n");
+                                                printf("El próximo vuelo n°%d",aleatorio+1);
+                                                printf(" sale dentro de tres horas...\n");
+                                                puts("-----------------------------------");
+
+                                                i = 11;
+                                                }
+                                            }
+                                        //////////////////////////////////////////////////////////////////
+                                        break;
+                                    case 2:
+                                        puts("-----------------------------------");
+                                        printf("El vuelo n°%d",aleatorio+1);
+                                        printf(" sale dentro de tres horas...\n");
+                                        puts("-----------------------------------");
+                                        break;
+                                }
 
                                 i = 11;
                             }
@@ -106,6 +155,7 @@ int main()
                     case 2:
                         puts("-----------------------------------");
                         printf("Volviendo al menú...\n");
+                        puts("-----------------------------------");
                         break;
                 }
                 system("pause");
@@ -114,7 +164,6 @@ int main()
 //////////////////////////////////////////////////////////////////////////////////
             case 2:
                 system("cls");
-                printf("En proceso...\n");
                 puts("-----------------------------------");
                 puts("***************COMPRAR PASAJE***************");
                 puts("-----------------------------------");
@@ -122,12 +171,14 @@ int main()
                 printf("Valor: $5.000\n");
                 printf("1. SI\n");
                 printf("2. NO\n");
+                puts("-----------------------------------");
                 printf("Opción: ");
                 scanf("%d",&op);
 
                 while (op!=1 && op!=2){
                     puts("-----------------------------------");
                     printf("Opción invalida, intente de nuevo...\n");
+                    puts("-----------------------------------");
                     printf("Opción: ");
                     scanf("%d",&op);
                 }
@@ -141,18 +192,63 @@ int main()
                                 recaudacion = (recaudacion + 5000);
 
                                 puts("-----------------------------------");
-                                printf("¡Pasaje comprado con éxito!\n");
+                                printf("¡Pasaje reservado con éxito!\n");
                                 printf("Su asiento es el N°%d\n",i+1);
                                 puts("-----------------------------------");
 
-                                i = 11; /*Detiene el bucle cuando encuentra un asiento*/
+                                i = 11;
                             }else if(asientos[9]==1){
-                                puts("-----------------------------------");
+                                system("cls");
                                 printf("No hay más asientos en la clase turista...\n");
-                                printf("¡Intente con uno de la primera clase!\n");
-                                printf("De lo contrario, el vuelo n°%d",aleatorio+1);
-                                printf(" sale dentro de tres horas...\n");
-                                puts("-----------------------------------");
+                                printf("¿Desea reservar uno de la primera clase?\n");
+                                printf("**El precio de la primera clase es de $10.000**\n");
+                                printf("1. Si\n");
+                                printf("2. No\n");
+                                printf("Opción: ");
+                                scanf("%d",&op);
+
+                                while(op!=1 && op!=2){
+                                    puts("-----------------------------------");
+                                    printf("Opción invalida, intente de nuevo...");
+                                    puts("-----------------------------------");
+                                    printf("Opción: ");
+                                    scanf("%d",&op);
+                                }
+
+                                switch(op){
+                                    case 1:
+                                        ////////////////////////////////////////////////////////////////////
+                                        for(i=0;i<5;i++){
+                                            if (asientos[i]==0){
+                                                asientos[i]=1;
+
+                                                recaudacion = (recaudacion + 10000);
+
+                                                puts("-----------------------------------");
+                                                printf("¡Pasaje reservado con éxito!\n");
+                                                printf("Su asiento es el N°%d\n",i+1);
+                                                puts("-----------------------------------");
+
+                                                i = 11;
+                                            }else if(asientos[4]==1){
+                                                puts("-----------------------------------");
+                                                printf("No hay más asientos en primera clase...\n");
+                                                printf("El próximo vuelo n°%d",aleatorio+1);
+                                                printf(" sale dentro de tres horas...\n");
+                                                puts("-----------------------------------");
+
+                                                i = 11;
+                                            }
+                                        }
+                                        ////////////////////////////////////////////////////////////////////
+                                        break;
+                                    case 2:
+                                        puts("-----------------------------------");
+                                        printf("El próximo vuelo n°%d",aleatorio+1);
+                                        printf(" sale dentro de tres horas...\n");
+                                        puts("-----------------------------------");
+                                        break;
+                                }
 
                                 i = 11;
                             }
@@ -161,6 +257,7 @@ int main()
                     case 2:
                         puts("-----------------------------------");
                         printf("Volviendo al menú...\n");
+                        puts("-----------------------------------");
                         break;
                 }
                 system("pause");
@@ -169,7 +266,6 @@ int main()
 //////////////////////////////////////////////////////////////////////////////////
             case 3:
                 system("cls");
-                printf("En proceso...\n");
                 puts("-----------------------------------");
                 puts("***********CANCELAR PASAJE***********");
                 puts("-----------------------------------");
@@ -182,6 +278,7 @@ int main()
                 while (op!=1 && op!=2){
                     puts("-----------------------------------");
                     printf("Opción invalida, intente de nuevo...\n");
+                    puts("-----------------------------------");
                     printf("Opción: ");
                     scanf("%d",&op);
                 }
@@ -193,6 +290,7 @@ int main()
                         printf("1. Primera Clase\n");
                         printf("2. Clase Turista\n");
                         printf("3. Volver al menú\n\n");
+                        puts("-----------------------------------");
                         printf("Opción: ");
                         scanf("%d",&op);
 
